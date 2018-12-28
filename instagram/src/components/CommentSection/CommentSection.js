@@ -1,8 +1,18 @@
 import React from 'react';
+import './CommentSection.css';
 
 const CommentSection = props => {
     return(
-        <h1>comments</h1>
+        <div className="comment-container">
+            {props.comments.map(comment => {
+                return (
+                <div className="comment">
+                    <h1>{comment.username}</h1>
+                    <p>{comment.text}</p>
+                </div>
+                )
+            })}
+        </div>
     )
 }
 

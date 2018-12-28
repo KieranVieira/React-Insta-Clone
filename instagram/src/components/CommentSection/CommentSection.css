@@ -1,0 +1,21 @@
+.comment-container{
+ margin: 10px 0;
+}
+
+.comment{
+    display: flex;
+    margin: 5px 0;
+    font-size: 1.3rem;
+}
+
+.comment h1{
+    font-size: 1.3rem;
+    margin: unset;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.comment p{
+    font-size: 1.3rem;
+    font-weight: lighter;
+}

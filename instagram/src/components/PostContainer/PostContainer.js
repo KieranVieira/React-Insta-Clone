@@ -5,7 +5,16 @@ import './PostContainer.css'
 const PostContainer = props => {
     return (
         <div>
-            <Post postData={props.postData}/>
+            {props.postData.map(post => {
+                return <Post 
+                    username={post.username}
+                    thumbnail={post.thumbnailUrl}
+                    image={post.imageUrl}
+                    likes={post.likes}
+                    comments={post.comments}
+                    time={post.timestamp}
+                />
+            })}
         </div>
     )
 }
