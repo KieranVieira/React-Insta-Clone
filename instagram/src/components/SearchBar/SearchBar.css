@@ -1,0 +1,30 @@
+.search-bar-main{
+    padding: 20px 0;
+    border-bottom: 1px solid lightgrey;
+}
+
+.search-bar-container{
+    display: flex;
+    justify-content: space-between;
+    width: 980px;
+    margin: 0 auto;
+    font-size: 2.5rem;
+}
+
+.search-bar-left i{
+    padding-right: 15px;
+    margin-right: 5px;
+    border-right: 2px solid #E6E6E6;
+}
+
+.search-bar-middle form input{
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 2px;
+    background-color: #FAFAFA;
+    border: 1px solid #DBDBDB;
+}
+
+.search-bar-right i{
+    margin-left: 30px;
+}
