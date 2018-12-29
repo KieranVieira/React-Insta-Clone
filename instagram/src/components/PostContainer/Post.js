@@ -1,6 +1,7 @@
 import React from 'react';
-import CommentSection from '../CommentSection/CommentSection'
-import './PostContainer.css'
+import CommentSection from '../CommentSection/CommentSection';
+import Comment from '../CommentSection/Comment';
+import './PostContainer.css';
 
 const Post = props => {
     return (
@@ -21,7 +22,7 @@ const Post = props => {
                 />
                 <p className="post-time">{props.time}</p>
             </div>
-
+            <Comment />
         </div>
     )
 }

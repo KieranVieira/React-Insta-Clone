@@ -19,3 +19,20 @@
     font-size: 1.3rem;
     font-weight: lighter;
 }
+.add-comment {
+    border-top: 1px solid #DBDBDB;
+    padding: 15px 0;
+    margin: 5px 10px;
+    display: flex;
+    justify-content: space-between
+}
+
+.add-comment input{
+    border: unset;
+    width:90%;
+    font-weight: bold;
+}
+
+.add-comment i{
+    font-size: 1.5rem
+}
