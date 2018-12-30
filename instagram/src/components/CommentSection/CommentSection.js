@@ -7,6 +7,7 @@ class CommentSection extends React.Component{
         this.state ={
             username: 'your username',
             commentText: '',
+            likes: this.props.likes,
             comments: this.props.comments,
         }
     }
@@ -31,14 +32,21 @@ class CommentSection extends React.Component{
         console.log(this.state.comments)
     }
 
+    like = e => {
+        console.log('clicked')
+        this.setState({
+            likes: this.state.likes + 1
+        })
+    }
+
     render(){
         return(
             <div className="post-bottom">
                 <div className="like-comment">
-                    <i className="far fa-heart"></i>
+                    <i className="far fa-heart" onClick={this.like}></i>
                     <i className="far fa-comment"></i>
                 </div>
-                <p>{`${this.props.likes} likes`}</p>
+                <p>{`${this.state.likes} likes`}</p>
 
                 <div className="comment-container">
                     {this.state.comments.map(comment => {
