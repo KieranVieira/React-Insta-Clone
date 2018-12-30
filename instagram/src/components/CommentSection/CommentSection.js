@@ -5,6 +5,7 @@ class CommentSection extends React.Component{
     constructor(props){
         super(props)
         this.state ={
+            username: 'your username',
             commentText: '',
             comments: this.props.comments,
         }
@@ -19,7 +20,7 @@ class CommentSection extends React.Component{
     addNewComment = e => {
         this.setState({
             comments: this.state.comments.push({
-                username: 'your username', 
+                username: this.state.username, 
                 text: this.state.commentText
             })
         })

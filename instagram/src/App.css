@@ -1,12 +1,14 @@
 html{
     box-sizing: border-box;
     font-size: 62.5%;
-    background-color: #FAFAFA
+    background-color: #FAFAFA;
+    font-family: 'Roboto', sans-serif;
 }
 
 .page-content{
     display: flex;
     margin: 0 25%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .footer-position{

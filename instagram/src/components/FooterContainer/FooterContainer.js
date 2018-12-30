@@ -21,23 +21,52 @@ const users = [
 
 const FooterContainer = props => {
     return (
-        <div className="suggestion-container">
-            <div className="suggestion-header">
-                <h1>Suggestions For You</h1>
-                <a href="#">See All</a>
+        <div>
+
+            <div className="current-user">
+                <img src="https://scontent-yyz1-1.cdninstagram.com/vp/fc1e539c4beed806c8b38f3e286d909a/5CC46D9E/t51.2885-19/s150x150/47029503_229817771242833_2023291151057944576_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com"/>
+                <div>
+                    <h1>vieiraillustration</h1>
+                    <h2>Kieran Vieira</h2>
+                </div>
             </div>
-            {users.map(user => {
-                return(
-                    <div className="user-suggestion">
-                        <img src={user.img}/>
-                        <div className="reccomended-user-name">
-                            <h2>{user.name}</h2>
-                            <p>{user.reccomendedFrom}</p>
+
+            <div className="suggestion-container">
+                <div className="suggestion-header">
+                    <h1>Suggestions For You</h1>
+                    <a href="#">See All</a>
+                </div>
+                {users.map(user => {
+                    return(
+                        <div className="user-suggestion">
+                            <img src={user.img}/>
+                            <div className="reccomended-user-name">
+                                <h2>{user.name}</h2>
+                                <p>{user.reccomendedFrom}</p>
+                            </div>
+                            <a href="">Follow</a>
                         </div>
-                        <a href="">Follow</a>
-                    </div>
-                )
-            })}
+                    )
+                })}
+            </div>
+
+            <div className="footer-links">
+                <ul>
+                    <a href="#">About Us •</a>
+                    <li><a href="#">Support •</a></li>
+                    <li><a href="#">Press •</a></li>
+                    <li><a href="#">API •</a></li>
+                    <li><a href="#">Jobs •</a></li>
+                    <li><a href="#">Privacy •</a></li>
+                    <li><a href="#">Terms •</a></li>
+                    <li><a href="#">Directory •</a></li>
+                    <li><a href="#">Profiles •</a></li>
+                    <li><a href="#">Hashtags •</a></li>
+                    <li><a href="#">Language</a></li>
+                </ul>
+                <p>(c) 2018 KIERAN VIEIRA</p>
+            </div>
+            
         </div>
     )
 }
