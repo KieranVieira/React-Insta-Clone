@@ -23,7 +23,7 @@
 
 .add-comment {
     border-top: 1px solid #DBDBDB;
-    margin: 5px 20px;
+    margin: 5px 0x;
     display: flex;
     justify-content: space-between
 }

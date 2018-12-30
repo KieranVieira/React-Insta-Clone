@@ -10,28 +10,9 @@ const Post = props => {
                 <h1>{props.username}</h1>
             </div>
             <img src={props.image} />
-            <div className="post-bottom">
-                <div className="like-comment">
-                    <i className="far fa-heart"></i>
-                    <i className="far fa-comment"></i>
-                </div>
-                <p>{`${props.likes} likes`}</p>
-
-                <div className="comment-container">
-                    {props.comments.map(comment => {
-                        return (
-                        <div className="comment">
-                            <h1> <a href="#">{comment.username}</a></h1>
-                            <p>{comment.text}</p>
-                        </div>
-                        )
-                    })}
-                </div>
-
-                <p className="post-time">{props.time}</p>
-            </div>
             <CommentSection 
                 comments = {props.comments}
+                likes = {props.likes}
             />
         </div>
     )
