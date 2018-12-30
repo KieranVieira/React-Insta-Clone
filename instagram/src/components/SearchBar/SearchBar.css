@@ -1,6 +1,7 @@
 .search-bar-main{
     padding: 20px 0;
     border-bottom: 1px solid lightgrey;
+    background-color: white;
 }
 
 .search-bar-container{
@@ -14,7 +15,7 @@
 .search-bar-left i{
     padding-right: 15px;
     margin-right: 5px;
-    border-right: 2px solid #E6E6E6;
+    border-right: 1px solid black;
 }
 
 .search-bar-middle form input{

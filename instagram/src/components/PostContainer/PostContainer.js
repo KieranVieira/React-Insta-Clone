@@ -1,6 +1,8 @@
 import React from 'react';
 import Post from './Post';
-import './PostContainer.css'
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import './PostContainer.css';
 
 const PostContainer = props => {
     return (
@@ -12,11 +14,24 @@ const PostContainer = props => {
                     image={post.imageUrl}
                     likes={post.likes}
                     comments={post.comments}
-                    time={post.timestamp}
+                    time={moment(post.timestamp,'MMMM Do YYYY, h:mm:ss a').fromNow()}
                 />
             })}
+            
         </div>
     )
+}
+
+PostContainer.propTypes = {
+    username: PropTypes.string,
+    thumbnail: PropTypes.string,
+    image: PropTypes.string,
+    likes: PropTypes.number,
+    comments: PropTypes.shape([{
+        username: PropTypes.string,
+        text: PropTypes.string,
+    }]),
+    time: PropTypes.string,
 }
 
 export default PostContainer;

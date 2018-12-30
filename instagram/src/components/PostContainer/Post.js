@@ -1,6 +1,5 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
-import Comment from '../CommentSection/Comment';
 import './PostContainer.css';
 
 const Post = props => {
@@ -13,18 +12,83 @@ const Post = props => {
             <img src={props.image} />
             <div className="post-bottom">
                 <div className="like-comment">
-                    <i class="far fa-heart"></i>
-                    <i class="far fa-comment"></i>
+                    <i className="far fa-heart"></i>
+                    <i className="far fa-comment"></i>
                 </div>
                 <p>{`${props.likes} likes`}</p>
-                <CommentSection 
-                    comments={props.comments}
-                />
+
+                <div className="comment-container">
+                    {props.comments.map(comment => {
+                        return (
+                        <div className="comment">
+                            <h1> <a href="#">{comment.username}</a></h1>
+                            <p>{comment.text}</p>
+                        </div>
+                        )
+                    })}
+                </div>
+
                 <p className="post-time">{props.time}</p>
             </div>
-            <Comment />
+            <CommentSection 
+                comments = {props.comments}
+            />
         </div>
     )
 }
+
+// class Post extends React.Component {
+//     constructor(props){
+//         super(props)
+//         this.state = {
+//             comments: [],
+//         }
+//     }
+
+//     componentDidMount(){
+//         this.setState({
+//             comments: this.state
+//         })
+//     }
+
+//     addNewComment = e => {
+
+//     }
+
+//     render(){
+//         return (
+//             <div className="post-container">
+//                 <div className="post-header">
+//                     <img src={this.props.thumbnail} />
+//                     <h1>{this.props.username}</h1>
+//                 </div>
+//                 <img src={this.props.image} />
+//                 <div className="post-bottom">
+//                     <div className="like-comment">
+//                         <i className="far fa-heart"></i>
+//                         <i className="far fa-comment"></i>
+//                     </div>
+//                     <p>{`${this.props.likes} likes`}</p>
+    
+//                     <div className="comment-container">
+//                         {this.props.comments.map(comment => {
+//                             return (
+//                             <div className="comment">
+//                                 <h1> <a href="#">{comment.username}</a></h1>
+//                                 <p>{comment.text}</p>
+//                             </div>
+//                             )
+//                         })}
+//                     </div>
+    
+//                     <p className="post-time">{this.props.time}</p>
+//                 </div>
+//                 <CommentSection 
+//                     addComment={this.addNewComment}
+//                 />
+//             </div>
+//         )
+//     }
+// }
 
 export default Post;
