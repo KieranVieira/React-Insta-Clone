@@ -16,7 +16,11 @@ class App extends Component {
 
   searchBar = e => {
     this.setState({
-      searchInput: e.target.value
+      dummyData: dummyData.filter(cv => {
+          if(cv.username.includes(e.target.value)){
+            return cv
+          }
+        })
     })
   }
 
