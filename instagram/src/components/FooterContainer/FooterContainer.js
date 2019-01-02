@@ -21,13 +21,13 @@ const users = [ //Users array simulates recomended users for footer component
 
 const FooterContainer = props => {
     return (
-        <div>
+        <div className="footer-container">
 
             <div className="current-user">
-                <img src="https://scontent-yyz1-1.cdninstagram.com/vp/fc1e539c4beed806c8b38f3e286d909a/5CC46D9E/t51.2885-19/s150x150/47029503_229817771242833_2023291151057944576_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com"/>
+                <img src="https://scontent-yyz1-1.cdninstagram.com/vp/8d9a630b932d18bca14218cdc86bdaf2/5CB69DA2/t51.2885-19/s150x150/28766663_184249188759350_5475249589118304256_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com"/>
                 <div>
-                    <h1>vieiraillustration</h1>
-                    <h2>Kieran Vieira</h2>
+                    <h1>{localStorage.getItem('username')}</h1>
+                    <h2>{localStorage.getItem('fullname')}</h2>
                 </div>
             </div>
 
@@ -64,7 +64,7 @@ const FooterContainer = props => {
                     <li><a href="#">Hashtags •</a></li>
                     <li><a href="#">Language</a></li>
                 </ul>
-                <p>(c) 2018 KIERAN VIEIRA</p>
+                <p><a href="https://kieranvieira.com/" target="_blank">(c) 2018 KIERAN VIEIRA</a></p>
             </div>
             
         </div>

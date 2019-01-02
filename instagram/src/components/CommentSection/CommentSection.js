@@ -5,7 +5,7 @@ class CommentSection extends React.Component{
     constructor(props){
         super(props)
         this.state ={
-            username: 'your username',
+            username: localStorage.getItem('username'),
             commentText: '',
             likes: this.props.likes,
             comments: this.props.comments,

@@ -7,7 +7,7 @@ html{
 
 .page-content{
     display: flex;
-    margin: 0 25%;
+    justify-content: center;
     font-family: 'Roboto', sans-serif;
 }
 

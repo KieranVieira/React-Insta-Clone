@@ -1,7 +1,7 @@
 .suggestion-container{
-    width: 100%;
+    width: 320px;
     height: 215px;
-    margin: 10px 25px 25px 25px;
+    margin: 10px 0 25px 25px;
     background-color: white;
     border: 1px solid #dedede;
     border-radius: 3px;
@@ -66,6 +66,10 @@
     margin: unset;
 }
 
+.footer-links{
+    width: 320px;
+}
+
 .footer-links ul{
     display: flex;
     flex-wrap: wrap;
@@ -74,6 +78,10 @@
 
 .footer-links p{
     margin: 15px 0 0 40px;
+    color: #a3a3a3;
+}
+
+.footer-links p a{
     color: #a3a3a3;
 }
 
@@ -111,4 +119,10 @@
     font-size: 1.2rem;
     color: grey;
     font-weight: 500;
+}
+
+@media (max-width:1060px){
+    .footer-container{
+        display: none;
+    }
 }
