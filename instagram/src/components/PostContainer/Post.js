@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection'
+import PropTypes from 'prop-types'
 
 const Post = props => {
     return(
@@ -19,6 +20,17 @@ const Post = props => {
             <CommentSection comments={props.postData.comments} time={props.postData.timestamp}/>
         </div>
     )
+}
+
+Post.propTypes = {
+    postData: PropTypes.shape({
+        thumbnailUrl: PropTypes.string,
+        username: PropTypes.string,
+        imageUrl: PropTypes.string,
+        likes: PropTypes.number,
+        comments: PropTypes.array,
+        timestamp: PropTypes.string
+    })
 }
 
 export default Post
