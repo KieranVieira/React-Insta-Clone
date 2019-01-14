@@ -10,8 +10,13 @@ const CommentSection = props => {
                 return <Comment comment={comment}/>
             })}
             <p className="time-stamp">{props.time}</p>
-            <form className="comment-section">
-                <input type="text" placeholder="Add a comment..."/>
+            <form className="comment-section" onSubmit={props.addComment}>
+                <input 
+                type="text" 
+                placeholder="Add a comment..."
+                onChange={props.handleChange}
+                value={props.commentText}
+                />
             </form>
         </div>
     )

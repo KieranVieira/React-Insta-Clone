@@ -2,24 +2,62 @@ import React from 'react';
 import CommentSection from '../CommentSection/CommentSection'
 import PropTypes from 'prop-types'
 
-const Post = props => {
-    return(
-        <div className="post">
-            <div className="post-header">
-                <img src={props.postData.thumbnailUrl} alt={`${props.postData.username} profile picture`}/>
-                <h1>{props.postData.username}</h1>
-            </div>
-            <img src={props.postData.imageUrl} alt={`${props.postData.username} Post Image`} className="main-img"/>
-            <div className="post-icons">
-                <i className="far fa-heart" />
-                <i className="far fa-comment" />
-                <div>
-                    <p>{`${props.postData.likes} likes`}</p>
+class Post extends React.Component{
+    constructor(props){
+        super(props);
+        this.state ={
+            username: 'placeholder',
+            comments: this.props.postData.comments,
+            commentText: '',
+            liked: false,
+        }
+    }
+
+    handleChange = e => {
+        this.setState({
+            commentText: e.target.value
+        })
+    }
+
+    addComment = e => {
+        e.preventDefault();
+        this.setState({
+            comments: [
+                ...this.state.comments,
+                {
+                username: this.state.username, 
+                text: this.state.commentText
+                }
+            ],
+            commentText: ''
+        })
+    }
+
+    render(){
+        return(
+            <div className="post">
+                <div className="post-header">
+                    <img src={this.props.postData.thumbnailUrl} alt={`${this.props.postData.username} profile picture`}/>
+                    <h1>{this.props.postData.username}</h1>
                 </div>
+                <img src={this.props.postData.imageUrl} alt={`${this.props.postData.username} Post Image`} className="main-img"/>
+                <div className="post-icons">
+                    <i className="far fa-heart" />
+                    <i className="far fa-comment" />
+                    <div>
+                        <p>{`${this.props.postData.likes} likes`}</p>
+                    </div>
+                </div>
+                <CommentSection 
+                comments={this.state.comments} 
+                time={this.props.postData.timestamp} 
+                handleChange={this.handleChange}
+                commentText={this.state.commentText}
+                addComment={this.addComment}
+                />
             </div>
-            <CommentSection comments={props.postData.comments} time={props.postData.timestamp}/>
-        </div>
-    )
+        )
+    }
 }
 
 Post.propTypes = {
