@@ -1,6 +1,7 @@
 import React from 'react';
-import CommentSection from '../CommentSection/CommentSection'
-import PropTypes from 'prop-types'
+import CommentSection from '../CommentSection/CommentSection';
+import PropTypes from 'prop-types';
+import moment from 'moment';
 
 class Post extends React.Component{
     constructor(props){
@@ -10,6 +11,7 @@ class Post extends React.Component{
             comments: this.props.postData.comments,
             commentText: '',
             liked: false,
+            time: moment(this.props.postData.timestamp,'MMMM Do YYYY, h:mm:ss a').fromNow()
         }
     }
 
@@ -50,7 +52,7 @@ class Post extends React.Component{
                 </div>
                 <CommentSection 
                 comments={this.state.comments} 
-                time={this.props.postData.timestamp} 
+                time={this.state.time} 
                 handleChange={this.handleChange}
                 commentText={this.state.commentText}
                 addComment={this.addComment}
