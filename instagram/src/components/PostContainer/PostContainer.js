@@ -7,7 +7,7 @@ const PostContainer = props => {
     return(
         <div className="post-container">
             {props.posts.map(post => {
-                return <Post postData={post}/>
+                return <Post postData={post} />
             })}
         </div>
     )

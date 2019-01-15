@@ -10,6 +10,7 @@ class Post extends React.Component{
             username: 'placeholder',
             comments: this.props.postData.comments,
             commentText: '',
+            likes: this.props.postData.likes,
             liked: false,
             time: moment(this.props.postData.timestamp,'MMMM Do YYYY, h:mm:ss a').fromNow()
         }
@@ -35,6 +36,17 @@ class Post extends React.Component{
         })
     }
 
+    likePost = e => {
+        console.log('liked');
+        if(!this.state.liked) {
+            this.setState({ likes: this.state.likes + 1, liked: true })
+            e.target.className = 'fas fa-heart';
+        } else{
+            this.setState({ likes: this.state.likes - 1, liked: false })
+            e.target.className = 'far fa-heart';
+        }
+    }
+
     render(){
         return(
             <div className="post">
@@ -44,10 +56,10 @@ class Post extends React.Component{
                 </div>
                 <img src={this.props.postData.imageUrl} alt={`${this.props.postData.username} Post Image`} className="main-img"/>
                 <div className="post-icons">
-                    <i className="far fa-heart" />
+                    <i className="far fa-heart" onClick={this.likePost}/>
                     <i className="far fa-comment" />
                     <div>
-                        <p>{`${this.props.postData.likes} likes`}</p>
+                        <p>{`${this.state.likes} likes`}</p>
                     </div>
                 </div>
                 <CommentSection 
