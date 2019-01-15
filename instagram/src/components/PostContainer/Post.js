@@ -54,7 +54,7 @@ class Post extends React.Component{
                     <img src={this.props.postData.thumbnailUrl} alt={`${this.props.postData.username} profile picture`}/>
                     <h1>{this.props.postData.username}</h1>
                 </div>
-                <img src={this.props.postData.imageUrl} alt={`${this.props.postData.username} Post Image`} className="main-img"/>
+                <img src={this.props.postData.imageUrl} alt={`${this.props.postData.username} Post`} className="main-img"/>
                 <div className="post-icons">
                     <i className="far fa-heart" onClick={this.likePost}/>
                     <i className="far fa-comment" />

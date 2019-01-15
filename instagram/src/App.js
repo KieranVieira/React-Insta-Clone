@@ -20,9 +20,7 @@ class App extends Component {
   }
 
   search = e => {
-    console.log(e.target.value)
     this.setState({
-      // searchQuery: e.target.value,
       postData: dummyData.filter(post => {
         return post.username.includes(e.target.value)
       })
