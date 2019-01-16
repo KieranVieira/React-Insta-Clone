@@ -37,7 +37,6 @@ class Post extends React.Component{
     }
 
     likePost = e => {
-        console.log('liked');
         if(!this.state.liked) {
             this.setState({ likes: this.state.likes + 1, liked: true })
             e.target.className = 'fas fa-heart';
