@@ -18,16 +18,14 @@ const authenticate = Posts => Login => {
         }
 
         login = e => {
-            e.preventDefault();
             localStorage.setItem('username', e.target.username.value);
             localStorage.setItem('fullname', e.target.fullname.value);
             localStorage.setItem('password', e.target.password.value);
             localStorage.setItem('loggedIn', true);
-            this.setState({loggedIn:true})
         }
 
         render(){
-            return this.state.loggedIn ? <PostsPage search={this.props.search} posts={this.props.posts}/> : <Login login={this.login}/>
+            return this.state.loggedIn ? <Posts search={this.props.search} posts={this.props.posts}/> : <Login login={this.login}/>
         }
     }
 }
