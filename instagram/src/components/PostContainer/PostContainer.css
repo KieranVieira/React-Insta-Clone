@@ -40,11 +40,19 @@
 
 .post-icons p{
     font-size: 1.5rem;
-    font-weight: 700;
-    margin: 5px 0;
+    font-weight: 500;
+    margin: 8px 0;
 }
 
 .post-icons i{
     font-size: 3rem;
     margin-right: 20px;
+}
+
+@media (max-width: 660px){
+    .post{
+        width: 98%;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
 }
