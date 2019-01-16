@@ -7,7 +7,7 @@ class Post extends React.Component{
     constructor(props){
         super(props);
         this.state ={
-            username: 'placeholder',
+            username: localStorage.getItem('username'),
             comments: this.props.postData.comments,
             commentText: '',
             likes: this.props.postData.likes,

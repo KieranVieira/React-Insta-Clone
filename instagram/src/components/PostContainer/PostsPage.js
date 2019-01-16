@@ -1,12 +1,16 @@
 import React from 'react';
 import SearchBar from '../SearchBar/SearchBar';
-import PostContainer from './PostContainer'
+import PostContainer from './PostContainer';
+import Footer from '../FooterContainer/Footer'
 
 const PostsPage = (props) => {
     return(
         <>
             <SearchBar search={props.search}/>
-            <PostContainer posts={props.posts}/>
+            <div className="page-content">
+                <PostContainer posts={props.posts}/>
+                <Footer className="footer-position"/>
+            </div>
         </>
     )
 }
