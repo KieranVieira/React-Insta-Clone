@@ -3,14 +3,10 @@ import './Login.css';
 import instagramLogo from '../../assets/instagram-logo.png'
 
 class Login extends React.Component{
-    constructor(props){
-        super(props);
-    }
-
     render(){
         return(
             <div className="login-container">
-            <img src={instagramLogo}/>
+            <img src={instagramLogo} alt="instagram logo"/>
             <h2>Sign up to see photos and videos from your friends.</h2>
             <button>Log In with Facebook</button>
             <h4>OR</h4>

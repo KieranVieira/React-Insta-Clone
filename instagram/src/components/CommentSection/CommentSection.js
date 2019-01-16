@@ -6,8 +6,8 @@ import './CommentSection.css'
 const CommentSection = props => {
     return(
         <div className="comment-container">
-            {props.comments.map(comment => {
-                return <Comment comment={comment}/>
+            {props.comments.map((comment,index) => {
+                return <Comment comment={comment} key={index}/>
             })}
             <p className="time-stamp">{props.time}</p>
             <form className="comment-section" onSubmit={props.addComment}>

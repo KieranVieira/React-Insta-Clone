@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import dummyData from './assets/dummy-data';
-import PostsPage from './components/PostContainer/PostsPage';
-import authenticate from './components/Authenticate/authenticate';
-import Login from './components/Login/Login'
+import Authenticate from './components/Authenticate/authenticate';
 import './App.css';
 
 class App extends Component {
@@ -32,22 +30,25 @@ class App extends Component {
 
   login = e => {
     e.preventDefault();
-    localStorage.setItem('username', e.target.username.value)
-    localStorage.setItem('fullname', e.target.fullname.value)
-    localStorage.setItem('password', e.target.password.value)
-    localStorage.setItem('loggedIn', true)
+    localStorage.setItem('username', e.target.username.value);
+    localStorage.setItem('fullname', e.target.fullname.value);
+    localStorage.setItem('password', e.target.password.value);
+    localStorage.setItem('loggedIn', true);
+    this.setState({loggedIn:true})
   }
   
   render() {
     return (
       <div className="App">
-        {/* <PostsPage search={this.search} posts={this.state.postData}/> */}
-        <Login login={this.login}/>
+        <Authenticate 
+          search={this.search} 
+          posts={this.state.postData} 
+          loggedIn={this.state.loggedIn}
+          login={this.login}
+        />
       </div>
     );
   }
 }
-
-const HOC = authenticate(App)
 
 export default App;
