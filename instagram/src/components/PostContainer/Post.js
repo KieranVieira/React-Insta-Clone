@@ -51,7 +51,7 @@ class Post extends React.Component{
         return(
             <div className="post">
                 <div className="post-header">
-                    <img src={this.props.postData.thumbnailUrl} alt={`${this.props.postData.username} profile picture`}/>
+                    <img src={this.props.postData.thumbnailUrl} alt={`${this.props.postData.username} profile`}/>
                     <h1>{this.props.postData.username}</h1>
                 </div>
                 <img src={this.props.postData.imageUrl} alt={`${this.props.postData.username} Post`} className="main-img"/>

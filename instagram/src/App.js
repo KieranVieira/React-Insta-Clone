@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import dummyData from './assets/dummy-data';
-import SearchBar from './components/SearchBar/SearchBar';
-import PostContainer from './components/PostContainer/PostContainer'
+import PostsPage from './components/PostContainer/PostsPage';
+import authenticate from './components/Authenticate/authenticate';
+import Login from './components/Login/Login'
 import './App.css';
 
 class App extends Component {
@@ -10,12 +11,14 @@ class App extends Component {
     this.state = {
       postData: [],
       searchQuery: '',
+      loggedIn: false,
     }
   }
 
   componentDidMount(){
     this.setState({
-      postData: dummyData
+      postData: dummyData,
+      loggedIn: localStorage.getItem('loggedIn')
     })
   }
 
@@ -26,15 +29,25 @@ class App extends Component {
       })
     })
   }
+
+  login = e => {
+    e.preventDefault();
+    localStorage.setItem('username', e.target.username.value)
+    localStorage.setItem('fullname', e.target.fullname.value)
+    localStorage.setItem('password', e.target.password.value)
+    localStorage.setItem('loggedIn', true)
+  }
   
   render() {
     return (
       <div className="App">
-        <SearchBar search={this.search}/>
-        <PostContainer posts={this.state.postData}/>
+        {/* <PostsPage search={this.search} posts={this.state.postData}/> */}
+        <Login login={this.login}/>
       </div>
     );
   }
 }
+
+const HOC = authenticate(App)
 
 export default App;
