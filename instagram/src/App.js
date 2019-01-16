@@ -25,6 +25,13 @@ class App extends Component {
       })
     })
   }
+
+  login = e => {
+    localStorage.setItem('username', e.target.username.value);
+    localStorage.setItem('fullname', e.target.fullname.value);
+    localStorage.setItem('password', e.target.password.value);
+    localStorage.setItem('loggedIn', true);
+  }
   
   render() {
     return (
@@ -32,6 +39,7 @@ class App extends Component {
         <Authenticate 
           search={this.search} 
           posts={this.state.postData} 
+          login={this.login}
         />
       </div>
     );
