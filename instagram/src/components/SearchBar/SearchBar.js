@@ -9,13 +9,11 @@ const SearchBar = props => {
                 <a href="https://kieranvieira.com/"><i className="fab fa-instagram"></i> Instagram </a>
                 </div>
                 <div className="search-bar-middle">
-                    <form>
-                        <input 
-                            type="text" 
-                            placeholder="Search"
-                            onChange={props.search}
-                        />
-                    </form>
+                    <input 
+                        type="text" 
+                        placeholder="Search"
+                        onChange={props.search}
+                    />
                 </div>
                 <div className="search-bar-right">
                     <a href="https://kieranvieira.com/"><i className="far fa-compass"></i></a>

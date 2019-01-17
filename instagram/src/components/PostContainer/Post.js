@@ -40,6 +40,7 @@ class Post extends React.Component{
         if(!this.state.liked) {
             this.setState({ likes: this.state.likes + 1, liked: true })
             e.target.className = 'fas fa-heart';
+            console.log(e.target)
         } else{
             this.setState({ likes: this.state.likes - 1, liked: false })
             e.target.className = 'far fa-heart';

@@ -36,3 +36,6 @@
 .comment-section input::placeholder{
     font-weight: 500;
 }
+.comment-section input:focus{
+    outline: none;
+}
