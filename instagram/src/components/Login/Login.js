@@ -3,6 +3,18 @@ import './Login.css';
 import instagramLogo from '../../assets/instagram-logo.png'
 
 class Login extends React.Component{
+    constructor(){
+        super();
+        this.state = {}
+    }
+
+    login = e => {
+        localStorage.setItem('username', e.target.username.value);
+        localStorage.setItem('fullname', e.target.fullname.value);
+        localStorage.setItem('password', e.target.password.value);
+        localStorage.setItem('loggedIn', true);
+    }
+
     render(){
         return(
             <div className="login-container">
@@ -11,10 +23,10 @@ class Login extends React.Component{
             <button>Log In with Facebook</button>
             <h4>OR</h4>
                 <div className="login-form-container">
-                    <form className="login-form" onSubmit={this.props.login}>
+                    <form className="login-form" onSubmit={this.login}>
                         <input type="text" name="username" placeholder="Username" required/>
                         <input type="text" name="fullname" placeholder="Full Name" required/>
-                        <input type="password" name="password" placeholder="Password" required/>
+                        <input type="password" name="password" placeholder="Password" required minLength="4"/>
                         <button type="submit">Sign Up</button>
                     </form>
                 </div>

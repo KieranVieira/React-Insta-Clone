@@ -1,6 +1,4 @@
 import React from 'react';
-import PostsPage from '../PostContainer/PostsPage'
-import LoginPage from '../Login/Login'
 
 const authenticate = Posts => Login => {
     return class extends React.Component {
@@ -18,9 +16,9 @@ const authenticate = Posts => Login => {
         }
 
         render(){
-            return this.state.loggedIn ? <Posts search={this.props.search} posts={this.props.posts}/> : <Login login={this.props.login}/>
+            return this.state.loggedIn ? <Posts/> : <Login/>
         }
     }
 }
 
-export default authenticate(PostsPage)(LoginPage);
+export default authenticate;
