@@ -16,6 +16,21 @@ const PostComponent = styled.div`
         margin: 0 auto;
         margin-bottom: 25px;
     }
+    .post-header{
+        display: flex;
+        align-items: center;
+        margin: 15px;
+        img{
+            width: 30px;
+            height: 30px;
+            border-radius: 20px;
+        }
+        h1{
+            margin: 0 0 2px 7px;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+    }
     img{
         width: 100%;
         height: auto;
@@ -34,22 +49,6 @@ const PostComponent = styled.div`
         .fa-heart{
             color: ${props => props.liked ? '#ED4956' : 'black'};
         }
-    }
-`;
-
-const PostHeader = styled.div`
-    display: flex;
-    align-items: center;
-    margin: 15px;
-    img{
-        width: 30px;
-        height: 30px;
-        border-radius: 20px;
-    }
-    h1{
-        margin: 0 0 2px 7px;
-        font-size: 1.4rem;
-        font-weight: 500;
     }
 `;
 
@@ -99,10 +98,10 @@ class Post extends React.Component{
     render(){
         return(
             <PostComponent liked={this.state.liked}>
-                <PostHeader>
+                <div className="post-header">
                     <img src={this.props.postData.thumbnailUrl} alt={`${this.props.postData.username} profile`}/>
                     <h1>{this.props.postData.username}</h1>
-                </PostHeader>
+                </div>
                 <img src={this.props.postData.imageUrl} alt={`${this.props.postData.username} Post`} className="main-img"/>
                 <div className="post-icons">
                     <i className="far fa-heart" onClick={this.likePost}/>

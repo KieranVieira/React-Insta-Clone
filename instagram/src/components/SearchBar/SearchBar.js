@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SearchBarMain = styled.div`
+const SearchBarMain = styled.header`
     padding: 20px 0;
     border-bottom: 1px solid lightgrey;
     background-color: white;
