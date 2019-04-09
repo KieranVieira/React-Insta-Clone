@@ -1,0 +1,3 @@
+## State Driven Applications and the Benifit They Provide Developers
+
+I believe that state driven applications make it a lot easier for programmers to create interactive dynamic applications. Specifically with React this is very helpful using Life-Cycle methods to re-render components based on state and also set state given specific user interactions. React also does this very well with components making it very easy to implement reusable components and librarys that can provide a lot of help to programmers wanting to create applications quickly while maintaining top of the line 'interactiveness'.

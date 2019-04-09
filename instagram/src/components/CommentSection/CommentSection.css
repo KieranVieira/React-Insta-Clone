@@ -1,0 +1,41 @@
+/* .comment-container{
+    margin: 0 15px;
+}
+
+.comment{
+    font-size: 1.35rem;
+    margin: unset;
+}
+
+.comment p{
+    margin: 0 0 8px 0;
+}
+
+.comment a{
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.time-stamp{
+    color: grey;
+    font-weight: 500;
+    margin: unset;
+    font-size: 1.3rem;
+}
+
+.comment-section input{
+    border: unset;
+    border-top: 1px solid lightgrey;
+    margin: 10px 0 0 0;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.comment-section input::placeholder{
+    font-weight: 500;
+}
+.comment-section input:focus{
+    outline: none;
+} */
